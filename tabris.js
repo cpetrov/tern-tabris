@@ -21,7 +21,7 @@
       var argNode = node.arguments[0];
       if (argNode) {
         var cx = infer.cx(), types = cx.definitions.tabris["!types"], typeName = argNode.value;
-        if (!types.hasProp(typeName)) addMessage(argNode, "Unknown tabris type '" + typeName + "'", defaultRules.UnknownTabrisType.severity);
+        if (!types.hasProp(typeName)) addMessage(argNode, "Unknown tabris.js type '" + typeName + "'", defaultRules.UnknownTabrisType.severity);
       }
     });
     
@@ -30,7 +30,7 @@
       var argNode = node.arguments[0];
       if (argNode) {
         var cx = infer.cx(), proxyType = argNode._tabris && argNode._tabris.proxyType, propertyName = argNode.value;
-        if (!getPropertyType(proxyType, propertyName)) addMessage(argNode, "Unknown tabris property '" + propertyName + "'", defaultRules.UnknownTabrisProperty.severity);
+        if (!getPropertyType(proxyType, propertyName)) addMessage(argNode, "Unknown tabris.js property '" + propertyName + "'", defaultRules.UnknownTabrisProperty.severity);
       }
     });
 
@@ -39,7 +39,7 @@
       var argNode = node.arguments[0];
       if (argNode) {
         var cx = infer.cx(), proxyType = argNode._tabris && argNode._tabris.proxyType, eventName = argNode.value;
-        if (!getEventType(proxyType, eventName)) addMessage(argNode, "Unknown tabris event '" + eventName + "'", defaultRules.UnknownTabrisEvent.severity);
+        if (!getEventType(proxyType, eventName)) addMessage(argNode, "Unknown tabris.js event '" + eventName + "'", defaultRules.UnknownTabrisEvent.severity);
       }
     });
     
